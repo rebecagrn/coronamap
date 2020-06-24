@@ -16,9 +16,9 @@ export default class App extends React.Component {
   }
 
   handleCountryChange = async (country) => {
-    console.log(country);
-    // fetch data
-    // set state
+    const resData = await fetchData(country);
+    
+    this.setState({ data: resData, country: country });
   }
 
   render() {

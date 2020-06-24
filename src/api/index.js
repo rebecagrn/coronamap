@@ -3,14 +3,22 @@ import { CountryPicker } from '../components';
 
 const resApi = "https://covid19.mathdro.id/api";
 
-export const fetchData = async () => {
+export const fetchData = async (country) => {
+  let changeUrl = resApi;
+
+  if(country) {
+    changeUrl = `${resApi}/countries/${country}`;
+  }
+
   try {
-    const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios.get(resApi);
+    const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios.get(changeUrl);
 
     const data = { confirmed, recovered, deaths, lastUpdate };
 
     return { confirmed, recovered, deaths, lastUpdate };
-  } catch (error) {}
+  } catch (error) {
+    
+  }
 }
 
 export const fetchDailyData = async () => {
