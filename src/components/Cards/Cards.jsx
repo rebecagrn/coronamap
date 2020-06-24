@@ -55,7 +55,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               />
             </Typography>
             <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
-            <Typography variant="body2">.Número de mortes por Covid-19</Typography>
+            <Typography variant="body2">Número de mortes por Covid-19</Typography>
           </CardContent>
         </Grid>
       </Grid>

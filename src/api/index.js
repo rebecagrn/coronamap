@@ -29,3 +29,11 @@ export const fetchDailyData = async () => {
     
   }
 }
+
+export const countries = async () => {
+  try {
+    
+  } catch (error) {
+    
+  }
+}
