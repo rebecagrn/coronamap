@@ -1,0 +1,19 @@
+.container {
+  margin: 50px 0;
+}
+
+.card {
+  margin: 0 2% !important;
+}
+
+.confirmed {
+  border-left: 5px solid rgb(224, 121, 51);
+}
+
+.recovered {
+  border-left: 5px solid rgb(88, 226, 157);
+}
+
+.deaths {
+  border-left: 5px solid rgb(245, 72, 72);
+}

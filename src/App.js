@@ -1,56 +1,29 @@
 import React from "react";
-import Axios from "axios";
-import "./App.css";
-export default class App  extends React.Component {
+import { Cards, Chart, CountryPicker } from "./components";
+import styles from "./App.css";
+import { fetchData } from "./api";
+
+export default class App extends React.Component {
   state = {
-    confirmed: 0,
-    recovered: 0,
-    deaths: 0,
-    countries: []
-  }
+    data: {},
+  };
 
-  componentDidMount() {
-    this.getData();
-  }
+  async componentDidMount() {
+    const resData = await fetchData();
 
-  async getData() {
-    const resApi = await Axios.get("https://covid19.mathdro.id/api");
-    const resCountries = await Axios.get("https://covid19.mathdro.id/api/countries");
-    this.setState({
-      confirmed: resApi.data.confirmed.value,
-      recovered: resApi.data.recovered.value,
-      deaths: resApi.data.deaths.value,
-    })
-  }
-
-  renderCountryOptions() {
-
+    this.setState({ data: resData });
   }
 
   render() {
+    const { data } = this.state;
+
     return (
-    <div className="container">
-      <h1>Corona Map</h1>
-
-      <select>
-        {this.renderCountryOptions()}
-      </select>
-
-      <div className="flexboxes">
-        <div className="boxes confirmed">
-          <h3>Casos Confirmados</h3>
-          <h4>{this.state.confirmed}</h4>
-        </div>
-        <div className="boxes recovered">
-        <h3>Recuperados</h3>
-          <h4>{this.state.recovered}</h4>
-        </div>
-        <div className="boxes deaths">
-        <h3>Mortes</h3>
-          <h4>{this.state.deaths}</h4>
-        </div>
+      <div className={styles.container}>
+        <h1>Corona Map</h1>
+        <Cards data={data} />
+        <CountryPicker />
+        <Chart />
       </div>
-    </div>
     );
   }
 }
