@@ -11,3 +11,9 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+
+@media (max-width: 778px) {
+  .container {
+    margin: 0 10%;
+  }
+}
