@@ -13,7 +13,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     }
 
     fetchAPI();
-  });
+  }, []);
 
   const lineChart = (
     dailyData.length // !== 0
@@ -51,7 +51,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                 'rgba(88, 226, 157, 0.5)',
                 'rgba(245, 72, 72, 0.5)',
               ],
-              data: [confirmed, recovered, deaths]
+              data: [confirmed.value, recovered.value, deaths.value]
             }]
           }}
           options={{
