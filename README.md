@@ -4,16 +4,7 @@ Aplicação Web usando React/Redux.
 
 ## Captura de Tela
 
-### Principal
-
 ![Main](/coronamap.png)
-
-## Desenvolvimento
-
-### Configuração do Ambiente
-
-### Instalação do Projeto
-
 
 ### Execução do Projeto
 
@@ -21,9 +12,7 @@ $ npm install
 
 $ npm start
 
-## Utilizados no Projeto
-
-### Techs e Libs
+### Utilizados no Projeto Techs e Libs
 
 - React
 - Material UI
@@ -33,5 +22,7 @@ $ npm start
 - Classnames
 - Jest
 
-### Contact
+### Contato
 [💻 Linkedin](https://www.linkedin.com/in/rebecagrn/)
+
+Desenvolvido por Rebeca G Pacheco.
